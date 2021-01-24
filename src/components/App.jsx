@@ -1,19 +1,15 @@
-import React from 'react';
-import unsplash from '../api/unsplash';
-import SearchBar from './SearchBar';
+import React from "react";
+import unsplash from "../api/unsplash.jsx";
+import SearchBar from "./SearchBar";
+import ImageList from "./ImageList";
 // require("dotenv").config();
 
-
-
 class App extends React.Component {
+  state = { images: [] };
 
-  state = { images : [] };
-
-    onSearchSubmit = async (term) => {
-
-    const response = await unsplash.get('/search/photos', {
-    params: { query: term, per_page: 20}
-    
+  onSearchSubmit = async (term) => {
+    const response = await unsplash.get("/search/photos", {
+      params: { query: term, per_page: 20 },
     });
 
     this.setState({ images: response.data.results });
@@ -22,15 +18,14 @@ class App extends React.Component {
     // .then((response) => {
     //   console.log(response.data.results);
     // });
+  };
 
-  }
-  
-  render(){
+  render() {
     return (
-      <div className="ui container" style={{ marginTop : '50px'}}>
-        <SearchBar onSubmit={ this.onSearchSubmit } /> 
-        <br/>
-        Found:  {this.state.images.length} images 
+      <div className="ui container" style={{ marginTop: "50px" }}>
+        <SearchBar onSubmit={this.onSearchSubmit} />
+        <br />
+        <ImageList images={this.state.images} />
       </div>
     );
   }
