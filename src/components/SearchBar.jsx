@@ -26,7 +26,7 @@ class SearchBar extends React.Component {
             <label style={{ textAlign: "center" }}>Image Search Engine</label>
             <input
               type="text"
-              placeholder="Type your search here..."
+              placeholder="Type your search here, search for any images e.g car, laptop etc"
               value={this.state.term}
               onChange={(e) => this.setState({ term: e.target.value })}
             />
