@@ -2,7 +2,7 @@
   "name": "search-engine",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://alipirzada1.github.io/Image-search-engine-app/",
+  "homepage": "http://alipirzada1.github.io/Image-search-engine-app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
